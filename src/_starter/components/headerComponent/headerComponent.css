@@ -1,0 +1,19 @@
+.headerComponent {
+    background-color: #fff;
+    width: auto;
+    padding-left: 20px;
+    padding-top: 16px;
+    padding-bottom: 16px;
+    font-family: Arial, Helvetica, sans-serif;
+    box-shadow: inset 0px -1px 0px #E5E5E5;
+}
+
+h3 {
+    color: #3A3A3A;
+    font-family: "proxima-nova";
+    font-style: normal;
+    font-weight: 500px;
+    font-size: 20px;
+    line-height: 18px;
+    margin: 0px 0px;
+}
