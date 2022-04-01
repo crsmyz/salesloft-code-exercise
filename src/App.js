@@ -1,26 +1,16 @@
-import React from "react";
-import { SLHeaderComponent } from "./_starter/components/headerComponent/headerComponent";
-import { SLTableComponent } from "./_starter/components/tableComponent/tableComponent";
-import { SLCardComponent } from "./_starter/components/cardComponent/cardComponent";
-import { Fragment } from "react/cjs/react.production.min";
-import { EmptyState } from "./_starter/shared/EmptyState/EmptyState";
-import { mockApiData } from "./_starter/mockData/mockData";
+import { React } from "react";
+import { PageComponent } from "./_starter/components/pageComponent/pageComponent";
 
 export const App = () => {
 
-// <SLTableComponent data={mockApiData}/>
-  return (
-    <>
-      <div>
-        <SLHeaderComponent headerTitle='People'/>
-      </div>
-      <div>
-        <SLTableComponent data={mockApiData}/>
-      </div>
-      <div>
-        <EmptyState children="" size = "large" thumbnail="no thank you" title="empty state" text="gg"></EmptyState>
-      </div>
-
-    </>
-    );
+/** 
+ * TODO: Double check Acceptance Criterion
+ * TODO: Refactor component structure
+ * TODO: Build in API calls with data components
+ * TODO: Make sure all display comonents are "dumb" aka display only
+ * TODO: Refactor CSS into JS
+ * TODO: Make sure styling is correct
+ * TODO: Add tests
+*/
+  return (<PageComponent/>);
 };

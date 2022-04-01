@@ -5,18 +5,14 @@ import "./tableComponent.css";
 
 export const SLTableComponent = ({data}) => {
   // table component
-  const obj = {
-    name: data.display_name,
-    title: data.title,
-    companyName: data.person_company_name
-  } 
+  // TODO: BE CAREFUL WITH PROP SPREADING HERE COULD BE A PERFORMANCE HIT!
   return (
     <div className="slTableComponent">
         <div className="col1">
-            <SLCardComponent data={obj}/>
+            <SLCardComponent {...data}/>
         </div>
         <div className="col2">
-            <SLCardComponent />
+            <SLCardComponent {...data}/>
         </div>
         <div className="col3">
             <SLCardComponent />
