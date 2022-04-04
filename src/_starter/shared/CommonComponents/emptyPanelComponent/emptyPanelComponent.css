@@ -1,0 +1,9 @@
+.slEmptyPanelComponent {
+    width: auto;
+    height: 300px;
+    background: #F9FAFB;
+    border: 1px solid #E5E5E5;
+    box-sizing: border-box;
+    margin: 10px;
+
+}

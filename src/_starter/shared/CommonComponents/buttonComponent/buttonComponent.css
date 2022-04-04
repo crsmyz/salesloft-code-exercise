@@ -1,0 +1,48 @@
+.slButton {
+    padding: 8px 12px;
+    width: auto;
+    height: 40px;
+
+    margin: 5px 10px 5px 10px;
+
+    background: #FFFFFF;
+    border-radius: 4px;
+    outline: none;
+    border: 2px solid #E5E5E5;
+    box-shadow: none;
+
+    font-family: "proxima-nova";
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 16px;
+    box-shadow: none;
+    text-align: center;
+    cursor: pointer;
+}
+
+.slButton.primary {
+    background: #3C9CD2;
+    border: 2px solid #3C9CD2;
+    color: #FFFFFF;
+    box-shadow: none;
+}
+
+.slButton.secondary {
+    background: #FFFFFF;
+    border: 2px solid #E5E5E5;
+    box-shadow: none;
+}
+
+.slButton.link {
+    background: #FFFFFF;
+    color: #3C9CD2;
+    outline: none;
+    border: none;
+}
+
+.slButton svg {
+    display: inline-block;
+    vertical-align: middle;
+}
+

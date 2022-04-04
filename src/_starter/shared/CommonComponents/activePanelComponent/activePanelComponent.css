@@ -1,0 +1,66 @@
+.slActivePanelComponent {
+    width: auto;
+    background: #FFFFFF;
+    border: 1px solid #E5E5E5;
+    box-sizing: border-box;
+    margin: 10px;
+    padding: 0px 0px 0px 0px;
+}
+
+    .slActivePanelHeader {
+        display: flex;
+        justify-content: space-between;
+        background: #FFFFFF;
+        border: 1px solid #E1E7EA;
+        box-sizing: border-box;
+    }
+
+        .slActivePanelHeaderLeft {
+
+        }
+
+        .slActivePanelHeaderRight {
+
+        }
+
+    .slActivePanelBody {
+        width: auto;
+        background-color: #FFFFFF;
+        margin: 0px 15px 0px 15px;
+    }
+
+        .slActivePanelName {
+            font-family: "proxima-nova";
+            font-style: normal;
+            font-weight: 300;
+            font-size: 24px;
+            line-height: 24px;
+            text-align: center;
+            color: #4F5359;
+        }
+
+        .slActivePanelTitle {
+            font-family: "proxima-nova";
+            font-style: normal;
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 17px;
+            text-align: center;
+            color: #4F5359;
+        }
+
+        .slActivePanelCompanyName {
+            height: 17px;
+            font-family: "proxima-nova";
+            font-style: normal;
+            font-weight: 600;
+            font-size: 14px;
+            line-height: 17px;
+            text-align: center;
+            color: #337AB7;
+        }
+
+        .slActivePanelSocialIcons {
+            text-align: center;
+            margin-bottom: 10px;
+        }

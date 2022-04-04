@@ -1,0 +1,17 @@
+.slTabListComponent {
+    width: 100%;
+}
+
+.slTabList {
+    display: flex;
+    flex-direction: row;
+
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    border-bottom: 2px solid #E5E5E5;
+}
+
+.slTabData {
+    margin: 15px;
+}

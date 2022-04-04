@@ -1,0 +1,51 @@
+.slActivityFeedItemComponent {
+    width: auto;
+    background: #FFFFFF;
+    display: flex;
+    margin: 5px 5px;
+}
+
+    .slActivityFeedItemIcon {
+        margin: 10px;
+        float: left;
+        transform: translateY(25%);
+    }
+
+    .slActivityFeedItemData {
+        width: 100%;
+        background: #FFFFFF;
+        border: 2px solid #E5E5E5;
+        box-sizing: border-box;
+        border-radius: 2px;
+        padding: 15px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+        .slActivityFeedItemBody {
+            width: auto;
+            height: 14px;
+            font-family: "proxima-nova";
+            font-style: normal;
+            font-weight: 600;
+            font-size: 14px;
+            line-height: 14px;
+            color: #4F5359;
+            
+        }
+
+        .slActivityFeedItemTime {
+            text-align: right;
+            height: 12px;
+            font-family: "proxima-nova";
+            font-style: normal;
+            font-weight: 600;
+            font-size: 12px;
+            line-height: 12px;
+        }
+
+        .slActivityFeedItemTime > div {
+            text-align: right;
+            color: #7A7F88;
+}
