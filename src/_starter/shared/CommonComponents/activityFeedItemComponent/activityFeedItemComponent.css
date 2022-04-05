@@ -14,7 +14,7 @@
     .slActivityFeedItemData {
         width: 100%;
         background: #FFFFFF;
-        border: 2px solid #E5E5E5;
+        border: 1px solid #E5E5E5;
         box-sizing: border-box;
         border-radius: 2px;
         padding: 15px;
@@ -32,7 +32,30 @@
             font-size: 14px;
             line-height: 14px;
             color: #4F5359;
-            
+
+            display: flex;
+            justify-content: center;
+            align-content: center;
+            flex-direction: column;
+        }
+
+        .slMainSubject {
+            font-family: "proxima-nova";
+            font-style: normal;
+            font-weight: 600;
+            font-size: 14px;
+            line-height: 14px;
+            color: #4F5359;
+            padding-bottom: 5px;
+        }
+
+        .slUserSubject {
+            font-family: "proxima-nova";
+            font-style: normal;
+            font-weight: 400;
+            font-size: 12px;
+            line-height: 12px;
+            color: #7A7F88;
         }
 
         .slActivityFeedItemTime {
@@ -43,9 +66,19 @@
             font-weight: 600;
             font-size: 12px;
             line-height: 12px;
+
+            display: flex;
+            justify-content: center;
+            align-content: center;
+            flex-direction: column;
         }
 
-        .slActivityFeedItemTime > div {
+        .dateAndTime {
             text-align: right;
+            font-family: "proxima-nova";
+            font-style: normal;
+            font-weight: 600;
+            font-size: 12px;
+            line-height: 12px;
             color: #7A7F88;
-}
+        }

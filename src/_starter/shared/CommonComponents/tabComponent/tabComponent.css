@@ -3,16 +3,13 @@
     color: black;
     padding: 10px 5px 20px 5px;
     margin: 5px 20px 0px 20px;
-
-height: 16px;
-
-font-family: "proxima-nova";
-font-style: normal;
-font-weight: 600;
-font-size: 18px;
-line-height: 16px;
-
-color: #3A3A3A;
+    height: 16px;
+    font-family: "proxima-nova";
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 16px;
+    color: #3A3A3A;
 }
 
 .slTabItem:hover {

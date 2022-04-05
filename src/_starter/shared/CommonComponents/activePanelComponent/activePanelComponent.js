@@ -1,15 +1,21 @@
 import React from "react";
+import PropTypes from "prop-types"
 import "./activePanelComponent.css";
 
-export const SLActivePanelComponent = (props) => {
+export const SLActivePanelComponent = ({panelHeader, panelBody}) => {
   return (
       <div className="slActivePanelComponent">
         <header className="slActivePanelHeader">
-          {props.panelHeader}
+          {panelHeader}
         </header>
         <div className="slActivePanelBody">
-          {props.panelBody}
+          {panelBody}
         </div>
       </div>
     );
 };
+
+SLActivePanelComponent.propTypes = {
+  panelHeader: PropTypes.node,
+  panelBody: PropTypes.node
+}

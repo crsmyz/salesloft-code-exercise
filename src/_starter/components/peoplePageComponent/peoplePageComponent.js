@@ -1,22 +1,28 @@
-import { React, useEffect, useState } from "react";
+// React
+import React, { useEffect, useState } from "react";
 // People Page Components
-import { SLActivityFeedPanelComponent} from "./activityFeedPanelComponent/activityFeedPanelComponent";
-import { fetchPageData } from "./peoplePageDataAPIService";
+import { fetchPageData } from "./peoplePageDataAPIService/peoplePageDataAPIService";
+import { PersonPanelHeaderComponent, PersonPanelBodyComponent } from "./personPanelComponent/personPanelComponent";
+import { SLActivePanelComponent } from "./../../shared/CommonComponents/activePanelComponent/activePanelComponent";
+import { ActivitiesPanelComponent} from "./activitiesPanelComponent/activitiesPanelComponent";
 // Common Components
 import { SLHeaderComponent } from "../../shared/CommonComponents/headerComponent/headerComponent";
-import { SLGridComponent } from "./../../shared/CommonComponents/gridComponent/gridComponent";
-import { SLActivePanelComponent } from "./../../shared/CommonComponents/activePanelComponent/activePanelComponent";
-import { SLEmptyPanelComponent } from "./../../shared/CommonComponents/emptyPanelComponent/emptyPanelComponent";
-import { default as StarOutlinedIcon } from "../../shared/Icons/StarOutlined";
-import { default as EllipsisHorizontal } from "../../shared/Icons/EllipsisHorizontal";
-import { default as Cloud } from "../../shared/Icons/Cloud";
-import { default as LinkedIn } from "../../shared/Icons/LinkedIn";
-import { default as Twitter } from "../../shared/Icons/Twitter";
-import { default as LinkIcon } from "../../shared/Icons/Link";
+import { SLGridComponent } from "../../shared/CommonComponents/gridComponent/gridComponent";
 // Constants
 import { PAGE_TITLES } from "../../../constants/pageTitleConstants";
+import { API_ENDPOINTS } from "../../../constants/apiEndpoints";
 
 export const PeoplePageComponent = () => {
+
+  // Recommendations for future development
+  /**
+   * Add typescript for full type safey and pre compile time bug checks
+   * Write more unit tests espically for the logic heavy Components
+   * See about formatting the API data in a way that takes less UI processing
+   * Add loading spinner to pagecomponent
+   * Look into error boundaries as needed
+   */
+
   const [pageTitle, setPageTitle]  = useState('');
   const [peopleData, setPeopleData] = useState([]);
   const [activitiesData, setActivitiesData] = useState([]);
@@ -24,47 +30,22 @@ export const PeoplePageComponent = () => {
   
   useEffect(() => {
     setPageTitle(PAGE_TITLES.people);
-    fetchPageData(setPeopleData, setActivitiesData);
+    fetchPageData(API_ENDPOINTS.peopleEndPoint, setPeopleData, setActivitiesData, setThirdColumnData);
   }, []);
 
-  const personPanelHeader = (d) => {
-    return (<><div className="slActivePanelHeaderLeft"><StarOutlinedIcon /></div><div className="slActivePanelHeaderRight"><EllipsisHorizontal /></div></>);
-  }
-    
-  const personPanelBody = (d) => {
-    return <><h1 className="slActivePanelName">{d.display_name}</h1><h4 className="slActivePanelTitle">{d.title}</h4><h4 className="slActivePanelCompanyName">{d.person_company_name}</h4><div className="slActivePanelSocialIcons">
-        <Cloud /><LinkedIn /><Twitter /><LinkIcon />
-    </div></>;
-  }
-
-  const panelActivitiesComp = (i, rowData) => {
-    return (<SLActivityFeedPanelComponent key={i} {...rowData}/>);
-  }
-
-  const generateActivePanel = (i, data) => {
-    if (i === 0 && data) return <SLActivePanelComponent key={i} panelHeader={personPanelHeader(data)} panelBody={personPanelBody(data)}/>;
-    if (i === 1 && data) return <SLActivePanelComponent key={i} panelHeader={panelActivitiesComp(i, data)} panelBody={null}/>;
-    if (i === 2 && data) return <SLActivePanelComponent key={i} panelHeader={null} panelBody={null}/>;
-    if (!data) return <SLEmptyPanelComponent key={i}/>;
+  const renderCustomPanelForEachColumn = (i, data) => {
+      if (i === 0 && data) return <SLActivePanelComponent key={i} panelHeader={PersonPanelHeaderComponent()} panelBody={PersonPanelBodyComponent(data)}/>;
+      if (i === 1 && data) return <SLActivePanelComponent key={i} panelHeader={ActivitiesPanelComponent(data)} panelBody={null}/>;
   }
 
   const checkPageDataAndReturnView = () => {
-    const people = peopleData && Object.keys(peopleData).length > 0;
-    const activities = activitiesData && Object.keys(activitiesData).length > 0;
-    if(people || activities) return getPageActiveView();
+    if (peopleData.length > 0 || activitiesData.length > 0 || thirdColumnData.length > 0) return (<div><SLGridComponent gridData={[peopleData, activitiesData, thirdColumnData]} gridRenderFunction={renderCustomPanelForEachColumn} /></div>)
   }
 
-  const getPageActiveView = () => {
-    return (
-      <div>
-          <SLGridComponent gridData={[peopleData, activitiesData, thirdColumnData]} gridRenderFunction={generateActivePanel} />
-      </div>);
-}
-
   return (
-    <>
+    <React.Fragment>
       <SLHeaderComponent headerTitle={pageTitle} />
       {checkPageDataAndReturnView()}
-    </>
+    </React.Fragment>
       );
 };

@@ -1,6 +1,5 @@
 import { render } from '@testing-library/react';
 import { SLTabListComponent } from "./tabListComponent";
-import { EmptyState } from "../../../shared/EmptyState/EmptyState";
 
 // check that component loads
 test('should render <SLTabListComponent> component', () => {

@@ -1,9 +1,8 @@
 .slButton {
-    padding: 8px 12px;
+    padding: 5px 8px;
+    
+    margin: 5px;
     width: auto;
-    height: 40px;
-
-    margin: 5px 10px 5px 10px;
 
     background: #FFFFFF;
     border-radius: 4px;
@@ -14,11 +13,17 @@
     font-family: "proxima-nova";
     font-style: normal;
     font-weight: 600;
-    font-size: 16px;
+    font-size: 14px;
     line-height: 16px;
-    box-shadow: none;
     text-align: center;
     cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-direction: row;
+    display: inline-block;
+    vertical-align: middle;
+    
 }
 
 .slButton.primary {
@@ -39,10 +44,14 @@
     color: #3C9CD2;
     outline: none;
     border: none;
+    display: inline-block;
 }
 
 .slButton svg {
-    display: inline-block;
     vertical-align: middle;
+}
+
+.slButtonIcon {
+    padding: 0px 5px 0px 5px;
 }
 

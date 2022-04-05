@@ -1,16 +1,17 @@
 import { React, useState } from "react";
+import PropTypes from "prop-types"
 import { SLTabComponent } from "./../tabComponent/tabComponent";
 import "./tabListComponent.css";
 
-export const SLTabListComponent = (props) => {
-    const [activeTab, setActiveTab] = useState(props.children[0].props.label);
+export const SLTabListComponent = ({ children }) => {
+    const [activeTab, setActiveTab] = useState(children[0].props.label);
     const tabClickHandler = (event) => {
         event.preventDefault();
         setActiveTab(event.target.textContent);
     }
 
     const generateTabLabels = () => {
-        return props.children.map((tab) => {
+        return children.map((tab) => {
             return <SLTabComponent key={tab.props.label} tabName={tab.props.label} activeTab={activeTab} onClick={tabClickHandler}/>
         });
     }
@@ -22,12 +23,15 @@ export const SLTabListComponent = (props) => {
                     {generateTabLabels()}    
                 </ul>
                 <div className="slTabData">
-                    {props.children.map((child) => {
+                    {children.map((child) => {
                      return child.props.label !== activeTab ? undefined : child.props.children;
                     })}
                 </div>
             </div>)
     }
+    return (children && children.length > 0 ? componentWithChildren(): null)
+}
 
-    return (props.children && props.children.length > 0 ? componentWithChildren(): null)
+SLTabListComponent.propTypes = {
+    children: PropTypes.array
 }

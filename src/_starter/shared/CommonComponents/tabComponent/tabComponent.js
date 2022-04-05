@@ -1,16 +1,24 @@
 import { React } from "react";
+import PropTypes from "prop-types"
 import "./tabComponent.css";
 
-export const SLTabComponent = (props) => {
+export const SLTabComponent = ({key, tabName, activeTab, onClick}) => {
     let tabItemStyle = 'slTabItem';
 
-    if (props.activeTab === props.tabName) {
+    if (activeTab === tabName) {
         tabItemStyle += ' active';
     }
 
     return (
-        <li className={tabItemStyle} onClick={props.onClick}>
-            {props.tabName}
+        <li className={"slTabItem " + tabItemStyle} onClick={onClick}>
+            {tabName}
         </li>
     )
+}
+
+SLTabComponent.propTypes = {
+    key: PropTypes.string,
+    tabName: PropTypes.string,
+    activeTab: PropTypes.string,
+    onClick: PropTypes.func
 }

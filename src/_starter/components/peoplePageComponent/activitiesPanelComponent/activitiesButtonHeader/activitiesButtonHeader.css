@@ -1,0 +1,16 @@
+.slActivitiesButtonHeader {
+    display: flex;
+    justify-content: space-between;
+}
+
+.slButtonGroup {
+    display: flex;
+}
+
+.slActionHeaderButtonDivider {
+    background-color: #E5E5E5;
+    width: 1px;
+    height: 29px;
+    margin: 0px 5px 0px 5px;
+    transform: translateY(25%);
+}

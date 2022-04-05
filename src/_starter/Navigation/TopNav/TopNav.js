@@ -41,7 +41,7 @@ const ActionBar = () => {
         </IconWrapper>
       ))}
       <UserDropdown name={"Robby"} />
-      <CircleButton Icon={RocketIcon} />
+      <CircleButton Icon={RocketIcon} bgColor="blue" color="white" />
     </Layout>
   );
 };
