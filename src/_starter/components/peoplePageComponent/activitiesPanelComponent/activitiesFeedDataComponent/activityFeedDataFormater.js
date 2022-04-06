@@ -1,4 +1,3 @@
-import React from "react";
 // Common Components
 import { default as Voicemail } from "../../../../shared/Icons/Voicemail";
 import { default as Badge } from "../../../../shared/Icons/Badge";

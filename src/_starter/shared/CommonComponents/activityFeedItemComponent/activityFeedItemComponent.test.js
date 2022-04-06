@@ -24,13 +24,12 @@ test('should have an icon', () => {
   id: "call-1",
   occurred_at: "2019-10-03T15:00:57.089927Z",
   type: "voicemail"};
-  render(<SLActivityFeedItemComponent Icon={PhoneIcon} mainSubject="Main Subject Line" userSubject="Modified by John Smith" date="2019-10-03T15:00:57.089927Z" bgColor="blueDark" color="blue"/>);
+  render(<SLActivityFeedItemComponent Icon={PhoneIcon} mainSubject={data.dynamic_data.user_name} userSubject={data.dynamic_data.user_name} date={data.occurred_at} bgColor="blueDark" color="blue"/>);
   const icon = screen.getByRole('button');
   expect(icon).toBeInTheDocument();
 });
 
 test('should have a username', () => {
-  const id = 1;
   const data = {
     created_at: "2020-04-09T01:50:06.951221Z",
     dynamic_data: {
